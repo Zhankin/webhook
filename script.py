@@ -23,7 +23,7 @@ def getMessage():
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url="https://git.heroku.com/afternoon-reaches-44328.git/510800243:AAEsmyadUWf8h6VL4YV0HbjXtvuYVLRNpFQ")
+    bot.set_webhook(url="https://zhankin-test-1.herokuapp.com/510800243:AAEsmyadUWf8h6VL4YV0HbjXtvuYVLRNpFQ")
     return "!", 200
 
 server.run(host="0.0.0.0", port=os.environ.get('PORT', 5000))
