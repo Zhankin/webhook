@@ -3,8 +3,8 @@ import os
 from flask import Flask, request
 
 bot = telebot.TeleBot('510800243:AAEsmyadUWf8h6VL4YV0HbjXtvuYVLRNpFQ')
-server = Flask(__name__)
 
+server = Flask(__name__)
 
 @bot.message_handler(commands=['start'])
 def start(message):
@@ -14,8 +14,7 @@ def start(message):
 def echo_message(message):
     bot.reply_to(message, message.text)
 
-
-@server.route("/510800243:AAEsmyadUWf8h6VL4YV0HbjXtvuYVLRNpFQ", methods=['POST'])
+@server.route("/bot", methods=['POST'])
 def getMessage():
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
     return "!", 200
@@ -25,5 +24,6 @@ def webhook():
     bot.remove_webhook()
     bot.set_webhook(url="https://zhankin-test-1.herokuapp.com/510800243:AAEsmyadUWf8h6VL4YV0HbjXtvuYVLRNpFQ")
     return "!", 200
-#print (str(os.environ.get))
+
 server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
+server = Flask(__name__)
