@@ -3,8 +3,8 @@ import os
 from flask import Flask, request
 
 bot = telebot.TeleBot('510800243:AAEsmyadUWf8h6VL4YV0HbjXtvuYVLRNpFQ')
-
 server = Flask(__name__)
+
 
 @bot.message_handler(commands=['start'])
 def start(message):
@@ -14,7 +14,8 @@ def start(message):
 def echo_message(message):
     bot.reply_to(message, message.text)
 
-@server.route("/bot", methods=['POST'])
+
+@server.route("/510800243:AAEsmyadUWf8h6VL4YV0HbjXtvuYVLRNpFQ", methods=['POST'])
 def getMessage():
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
     return "!", 200
@@ -26,4 +27,3 @@ def webhook():
     return "!", 200
 
 server.run(host="0.0.0.0", port=os.environ.get('PORT', 5000))
-server = Flask(__name__)
