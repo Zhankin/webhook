@@ -22,8 +22,10 @@ def getMessage():
 @server.route("/")
 def webhook():
     bot.remove_webhook()
+    print ('!!!!!!!!!!!!!!!!!!')
     bot.set_webhook(url="https://zhankin-test-1.herokuapp.com/510800243:AAEsmyadUWf8h6VL4YV0HbjXtvuYVLRNpFQ")
+    print ('!!!!!!!!!!!!!!!!!!')
     return "!", 200
 
-server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
+server.run(host="0.0.0.0", port=int(os.environ.get('PORT')))
 server = Flask(__name__)
