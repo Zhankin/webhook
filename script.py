@@ -1,4 +1,4 @@
-#import telebot
+import telebot
 #import os
 #from flask import Flask, request
 
@@ -33,7 +33,7 @@ server = Flask(__name__)'''
 
 from flask import Flask, request
 import os
-import telegram
+#import telegram
 
 # CONFIG
 TOKEN    = '510800243:AAEsmyadUWf8h6VL4YV0HbjXtvuYVLRNpFQ'
