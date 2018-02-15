@@ -19,7 +19,7 @@ def getMessage():
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
     return "!", 200
 
-@server.route("/")
+#@server.route("/")
 def webhook():
     bot.remove_webhook()
     print ('!!!!!!!!!!!!!!!!!!')
@@ -27,5 +27,6 @@ def webhook():
     print ('!!!!!!!!!!!!!!!!!!')
     return "!", 200
 
+webhook()
 server.run(host="0.0.0.0", port=int(os.environ.get('PORT')))
 server = Flask(__name__)
